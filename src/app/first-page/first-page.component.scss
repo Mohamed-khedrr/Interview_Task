@@ -1,0 +1,73 @@
+@import "../../custom-utils/colors";
+
+.first-container {
+  background-color: rgba(243, 245, 247, 1);
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 60px;
+  grid-template-areas: "content side-nav";
+  .side-nav {
+    background-color: rgba(62, 151, 255, 1);
+    height: 100vh;
+    grid-area: "side-nav";
+    background-image: ("imgs/");
+  }
+  grid-area: "cotent";
+  main {
+    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .form-nav {
+    background-color: rgba(255, 255, 255, 1);
+    border: solid 1px rgba(238, 238, 238, 1);
+    color: rgba(139, 146, 153, 1);
+    padding: 1rem;
+
+    @apply m-4 gap-8;
+    @media (max-width: 1024px) {
+      @apply mx-1 gap-4;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      gap: 0.5rem;
+
+      &.active {
+        .option-num {
+          background-color: $text-blue;
+          color: white;
+          border-color: $text-blue;
+        }
+        .option-txt {
+          font-weight: 500;
+          color: $text-blue;
+        }
+      }
+      .option-num {
+        font-size: 13.5px;
+        display: block;
+        // background-color: $text-blue;
+        background-color: transparent;
+        border: solid 1px rgba(204, 205, 207, 1);
+        color: rgba(139, 146, 153, 1);
+      }
+      .option-txt {
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+    }
+  }
+  .forms {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -1,0 +1,97 @@
+<div class="main-form-model-container text-end p-4 m-4 rounded-lg ">
+  <section class="form-header">
+
+    <h2
+      class=" form-heading text-xl custom-dark-txt-color flex items-center flex-row-reverse p-2 gap-4 font-neo font-medium">
+      <span>
+        <img src="imgs/chart-simple.svg" alt="">
+      </span>
+      {{translation.app.modelFrom.heading}}
+    </h2>
+    <div class="flex items-center justify-end gap-4 mt-8 mb-3 p-2">
+
+      <h3 class="text-sm custom-txt-blue mb-0 font-medium">
+        {{translation.app.modelFrom.dataSelection}}
+      </h3>
+      <span
+        class="stage-num text-white custom-bg-blue block h-4 w-4 flex  rounded-full justify-center items-center ">1</span>
+    </div>
+    <p class="text-xs head-txt p-2">
+      {{translation.app.modelFrom.instructions}}
+    </p>
+  </section>
+  <div class="p-2">
+    <div class="seprator-line">
+      <span class="text-xs flex items-center gap-2 flex-row-reverse" type="button">
+        <span>
+          <img src="imgs/eye.dark.svg" alt="">
+        </span>
+        {{translation.app.modelFrom.visibleFields}}
+      </span>
+    </div>
+    <div cdkDropList class="example-list my-4 flex flex-col gap-3" (cdkDropListDropped)="dropInVisible($event)">
+      @for (item of questionsService.visibleList; track $index) {
+      <div class="item-conainer" cdkDrag>
+        <div class="flex items-center justify-end">
+          <button (click)="moveToHiddenList($index)" class="eye-icon p-2 mx-4  ">
+            <img src="imgs/Primary.svg" alt="">
+          </button>
+          <div class=" drag-item-txt flex items-center justify-between bg-white p-2 gap-2 rounded mb-0 grow">
+            <button class="edit-btn" (click)="editLabel($index)"><img class="w-3 h-3" src="imgs/pen-to-square.svg"
+                alt=""></button>
+            <div class="item-data grow justify-end flex align-center gap-2">
+              <form (ngSubmit)="changeItem($index)" [formGroup]="dataFrom" class="place-holder-color w-full">
+                <span class="text-sm " [hidden]="VisibleInputIndex() == $index">{{item.placeholder}}</span>
+                <input formControlName="itemName" (keydown)="$event"
+                  class="w-full focus:outline-none custom-dark-txt-color text-end  "
+                  [hidden]="VisibleInputIndex() != $index" type="text" [value]="item.placeholder">
+              </form>
+              <span class="flex items-center"><img class="w-4 h-4" [src]="item.iconsUrl" alt=""></span>
+              <span class="flex items-center"><img src="imgs/ellps.svg" alt=""></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="seprator-line">
+      <span class="text-xs flex items-center gap-2 flex-row-reverse" type="button">
+        <span>
+          <img src="imgs/eye.dark.svg" alt="">
+        </span>
+        {{translation.app.modelFrom.hiddenFields}}
+
+      </span>
+
+    </div>
+
+    <div cdkDropList class="example-list my-4 flex flex-col gap-3" (cdkDropListDropped)="dropInHidden($event)">
+      @for (item of questionsService.hiddenList; track $index) {
+      <div class="" cdkDrag>
+        <div class="flex items-center justify-end">
+          <button (click)="moveToVisibleList($index)" class="eye-icon p-2 mx-4  ">
+            <img src="imgs/eye-slash.svg" alt="">
+          </button>
+          <div class=" drag-item-txt flex items-center justify-between bg-white p-2 gap-2 rounded mb-0 grow">
+            <div class="item-data grow justify-end flex align-center gap-2">
+              <form class="place-holder-color w-full">
+                <span class="text-sm ">{{item.placeholder}}</span>
+              </form>
+              <span class="flex items-center"><img class="w-4 h-4" [src]="item.iconsUrl" alt=""></span>
+              <span class="flex items-center"><img src="imgs/ellps.svg" alt=""></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+  <div class="text-start px-4 mt-10">
+
+    <button class="next-btn">
+      {{translation.app.modelFrom.step}}
+
+    </button>
+  </div>
+
+</div>

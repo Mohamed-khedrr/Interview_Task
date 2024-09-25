@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Neo Sans Arabic";
+  src: url("../public/fonts/alfont_com_NeoSansArabic.ttf") format("truetype");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./custom-utils/colors";
+@import "./custom-utils/typo";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Neo Sans Arabic", sans-serif;
+}

@@ -1,0 +1,32 @@
+@import "../../custom-utils/colors";
+
+.fs-13 {
+  font-size: 13px;
+}
+
+.feedback-form {
+  width: 60%;
+  box-shadow: 1px 1px 1px $shadow-color;
+  background-color: rgba(252, 252, 252, 1);
+  border: 1px solid rgba(62, 151, 255, 0.2);
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+  .input-container {
+    border-radius: 4px;
+    border: solid 0.5px rgba(62, 151, 255, 0.2);
+    background-color: rgba(252, 252, 252, 1);
+    box-shadow: 1px 1px 1px rgba(202, 202, 202, 0.25);
+
+    input {
+      border: solid 0.75px $border-color;
+      border-radius: 4px;
+      color: rgba(135, 136, 139, 1);
+      @apply my-2;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

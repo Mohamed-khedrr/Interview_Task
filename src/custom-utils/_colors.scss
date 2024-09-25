@@ -1,0 +1,26 @@
+$dark-text-color: rgba(52, 53, 88, 1);
+$text-blue: rgba(62, 151, 255, 1);
+$place-holder-color: rgba(135, 136, 139, 1);
+$app-bg: rgba(252, 252, 252, 1);
+$shadow-color: rgba(202, 202, 202, 0.25);
+$border-color: rgba(224, 227, 233, 1);
+
+.custom-dark-txt-color {
+  color: $dark-text-color;
+}
+
+.custom-txt-blue {
+  color: $text-blue;
+}
+
+.custom-bg-blue {
+  background-color: $text-blue;
+}
+
+.place-holder-color {
+  color: $place-holder-color;
+}
+
+.app-bg {
+  background-color: $app-bg;
+}

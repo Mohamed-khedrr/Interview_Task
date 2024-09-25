@@ -1,0 +1,53 @@
+<div class="first-container p-2 pt-4" dir="">
+  <main class=" ">
+    <section class="content ">
+      <header class="top-nav mx-4 px-2 py-2 rounded-md bg-white overflow-hidden">
+        <img src="imgs/top-header.png" alt="">
+      </header>
+      <div class="forms ">
+        <div class="form-container ">
+          <div [hidden]="!isNavVisible()"
+            class="form-nav relative flex justify-center items-center  rounded-lg flex-row-reverse">
+            <button class="flex items-center flex-row-reverse active">
+              <span class="option-num h-6 w-6  rounded-full text-white">1</span>
+              <span class=" option-txt text-sm">
+                {{translation.app.firstPage.nav.option1}}
+              </span>
+            </button>
+            <button>
+              <span class="option-num h-6 w-6  rounded-full text-white">2</span>
+              <span class="option-txt text-sm">
+                {{translation.app.firstPage.nav.option2}}
+              </span>
+            </button>
+            <button>
+              <span class="option-num h-6 w-6  rounded-full text-white">2</span>
+              <span class="option-txt text-sm">
+                {{translation.app.firstPage.nav.option3}}
+              </span>
+            </button>
+            <button>
+              <span class="option-num h-6 w-6  rounded-full text-white">2</span>
+              <span class="option-txt text-sm">
+                {{translation.app.firstPage.nav.option4}}
+              </span>
+            </button>
+            <button (click)="closeFormNav()" class="close-btn absolute left-4">
+              <img src="imgs/close.svg" alt="">
+            </button>
+          </div>
+          <div class="form-body">
+            <app-feedback-form></app-feedback-form>
+          </div>
+        </div>
+        <aside class="">
+          <app-model-form></app-model-form>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <nav class="side-nav overflow-hidden rounded-xl ps-1 h-screen">
+    <img class="h-100" src="imgs/side.png" alt="">
+  </nav>
+
+</div>

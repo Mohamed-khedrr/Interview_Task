@@ -1,0 +1,17 @@
+<div class="feedback-container  flex justify-center">
+
+  <form class="feedback-form bg-red-400 p-8 my-6 rounded-lg" action="">
+
+    @for (item of questionsService.visibleList; track $index) {
+    <div class="input-container flex flex-col px-8 py-4 bg-white my-4 ">
+      <label class="input-label flex flex-row-reverse items-center gap-1 text-xs">
+        <span>
+          <img [src]="item.iconsUrl" alt="">
+        </span>
+        {{item.placeholder}}</label>
+      <input class="fs-13 px-2 py-1 text-end" type="text">
+    </div>
+    }
+  </form>
+
+</div>

@@ -1,0 +1,115 @@
+@import "../../custom-utils/colors";
+@import "../../custom-utils/typo";
+
+$background-light: rgba(252, 252, 252, 1);
+$background-hover: rgba(62, 151, 255, 0.1);
+$text-color: rgba(28, 28, 40, 1);
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin transition {
+  transition: all 0.2s ease;
+}
+
+.font-13 {
+  font-size: 13px;
+}
+
+.main-form-model-container {
+  font-family: $font-neo;
+  background-color: $background-light;
+  overflow-y: auto;
+  border: solid 0.75px rgba(238, 238, 238, 1);
+  box-shadow: 1px 1px 1px $shadow-color;
+
+  @media (max-width: 1024px) {
+    width: 60%;
+    @apply mx-auto;
+  }
+  @media (max-width: 768px) {
+    width: 90%;
+    @apply mx-auto;
+  }
+  .form-header {
+    .form-heading {
+      background-color: rgba(202, 202, 202, 0.1);
+    }
+
+    .head-txt {
+      color: rgba(131, 137, 159, 1);
+    }
+
+    h3 {
+      margin-bottom: 0;
+    }
+
+    .stage-num {
+      font-size: 9px;
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  .seprator-line {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    color: $text-color;
+
+    &::before,
+    &::after {
+      content: "";
+      border: solid 0.5px $place-holder-color;
+      height: 0;
+      transform: translateY(12px);
+      @apply mx-2;
+    }
+  }
+
+  .eye-icon {
+    background-color: rgba(170, 170, 170, 0.1);
+    border-radius: 4px;
+    @include transition;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $background-hover;
+    }
+  }
+
+  .item-conainer {
+    .edit-btn {
+      display: none;
+      @include transition;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &:hover .edit-btn {
+      display: inline;
+    }
+  }
+
+  .drag-item-txt {
+    margin: 0;
+    border: solid 0.75px $border-color;
+    box-shadow: 1px 1px 1px $shadow-color;
+  }
+
+  .next-btn {
+    background-color: $text-blue;
+    color: white;
+    font-size: 14px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    @include transition;
+
+    &:hover {
+      background-color: lighten($text-blue, 5%);
+    }
+  }
+}
