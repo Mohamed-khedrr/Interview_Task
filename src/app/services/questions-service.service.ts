@@ -5,7 +5,7 @@ import { Injectable, signal } from '@angular/core';
 })
 export class QuestionsServicesService {
   visibleList = [
-    { placeholder: 'حقل أسم العميل', iconsUrl: 'imgs/pen-to-square.svg' },
+    { placeholder: 'حقل أسم العميل', iconsUrl: 'imgs/user-square.svg' },
     { placeholder: 'حقل رقم الهاتف', iconsUrl: 'imgs/call.svg' },
     { placeholder: 'حقل البريد الألكتروني', iconsUrl: 'imgs/mail-outline.svg' },
     { placeholder: 'حقل المنتجات', iconsUrl: 'imgs/mail-outline.svg' },
